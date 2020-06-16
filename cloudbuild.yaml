@@ -1,22 +1,22 @@
- steps:
+steps:
 # Build the container image
  - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/lab11-280505/httpd:', '-f', './docker/Dockerfile', '.']
+   args: ['build', '-t', 'gcr.io/lab11-280505/httpd:', '-f', './docker/Dockerfile', '.']
 # Push the container image to Container Registry
-- name: ‘gcr.io/cloud-builders/docker’
- args: [‘push’, ‘gcr.io/lab11-280505/httpd’]
+ - name: ‘gcr.io/cloud-builders/docker’
+   args: [‘push’, ‘gcr.io/lab11-280505/httpd’]
 # Deploy container image to Cloud Run
-- name: 'gcr.io/cloud-builders/gcloud'
- args:
- - run
- - deploy
- - gcp-lab-1
- - --image
- - gcr.io/lab11-280505/httpd
- - --region
- - us-central1
- - --platform
- - managed
- - --allow-unauthenticated
+ - name: 'gcr.io/cloud-builders/gcloud'
+   args:
+    - run
+    - deploy
+    - gcp-lab-1
+    - --image
+    - gcr.io/lab11-280505/httpd
+    - --region
+    - us-central1
+    - --platform
+    - managed
+    - --allow-unauthenticated
 images:
-- gcr.io/lab11-280505/httpd
+ - gcr.io/lab11-280505/httpd
