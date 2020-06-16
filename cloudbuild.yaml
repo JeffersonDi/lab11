@@ -1,7 +1,7 @@
-steps:
+ steps:
 # Build the container image
-- name: 'gcr.io/cloud-builders/docker'
- args: ['build', '-t', 'gcr.io/lab11-280505/httpd:', '-f', './docker/Dockerfile', '.']
+ - name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/lab11-280505/httpd:', '-f', './docker/Dockerfile', '.']
 # Push the container image to Container Registry
 - name: ‘gcr.io/cloud-builders/docker’
  args: [‘push’, ‘gcr.io/lab11-280505/httpd’]
